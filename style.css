@@ -419,3 +419,45 @@ footer {
 .sns-images a {
   cursor:pointer;
 }
+
+@media screen and (max-width: 1700px) {
+  .feature-section img {
+    width: 240px;
+    height: 222px;
+  }
+  .feature-one-heading {
+    font-size: 2rem;
+  }
+  .feature-one-para {
+    font-size: 0.75rem;
+  }
+  .feature-description {
+    font-size: 1rem;
+  }
+  .feature-two-heading {
+    font-size: 2rem;
+  }
+  .feature-two-para {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .feature-two-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  .feature-section img {
+    width: 240px;
+    height: 222px;
+  }
+}
