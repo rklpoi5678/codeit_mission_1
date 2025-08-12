@@ -51,7 +51,7 @@ table {
 
 @font-face {
   font-family: 'ROKAF Sans';
-  src: url('./fonts/ROKAF\ Sans\ Medium.otf')
+  src: url('./fonts/ROKAF\ Sans\ Medium.ttf') format('opentype')
 }
 
 * {
@@ -111,7 +111,7 @@ nav {
 .logo-title > a{
   display: inline-flex;
   text-decoration: none;
-  align-items: center ;
+  align-items: flex-end ;
   margin-left: 8.59px;
   font-family: "ROKAF Sans";
   font-size: 25.633px; /* 1.6020625rem */
