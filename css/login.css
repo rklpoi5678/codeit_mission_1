@@ -93,7 +93,7 @@ form > label {
   border-radius: 9999px;
 }
 
-#submit-btn:focus {
+#submit-btn:hover {
   background-color: #3692FF;
 }
 
@@ -123,7 +123,7 @@ form > label {
   width: 42px; 
 }
 
-/* lastelement */
+/* last-element */
 .signup-para {
   display: flex;
   font-family: Pretendard;
