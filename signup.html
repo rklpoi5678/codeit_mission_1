@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="./css/login.css"/>
+  <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFWX60JDRX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-EFWX60JDRX');
+  </script>
+
+</head>
+<body>
+
+  
+  <main>
+    <div class="auth-header">
+      <a href="./"><img src='./src/logo.png'></a>
+      <p>판다마켓</p>
+    </div>
+
+    <form method="POST">
+      <label for="email">이메일</label>
+      <input name="email" type="email" placeholder="이메일을 입력해주세요">
+
+      <label for="nickname">닉네임</label>
+      <input name="nickname" type="text" placeholder="닉네임을 입력해주세요">
+
+      <label for="password">비밀번호</label>
+      <input class="password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+
+      <label for="password">비밀번호 확인</label>
+      <input class="password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+
+      <button id="submit-btn" type="submit">로그인</button>
+    </form>
+
+    <div class="thirth-party-auth">
+      <p>간편 로그인하기</p>
+      <div class="thirth-party-auth-imgs">
+        <a href="https://www.google.com"><img src="./src/sns/auth_ic_google.png"></a>
+        <a href="https://www.kakaocorp.com/page/"><img src="./src/sns/auth_ic_kakao.png"></a>
+      </div>
+    </div>
+
+    <p class="signup-para">이미 회원이신가요?<a href="./login">로그인</a></p>
+  </main>
+</body>
+</html>

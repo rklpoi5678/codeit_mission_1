@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; /* default: 16px */
+}
+
+body {
+  font-size: 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 231px 0 284px;
+}
+
+.auth-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.39rem;
+  margin-bottom: 2.5rem;
+}
+
+.auth-header img {
+  width: 103.529px;
+  height: 103.88px;
+  flex-shrink: 0;
+}
+
+.auth-header p {
+  font-family: 'ROKAF Sans';
+  font-size: 4.0215rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--brand-blue);
+}
+
+/* 로그인 & 회원가입폼 */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  background-color: var(--Cool-Gray-100);
+}
+
+/* eye-icon */
+.password {
+  background-image: url(../src/btn_visibility_off.svg);
+  background-repeat: no-repeat;
+  background-position: 98%;
+  
+}
+
+.btn_visibilty_icon {
+  width: 24px;
+  height: 24px;
+}
+
+form > label {
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.625rem;
+  margin-bottom: 16px;
+}
+
+#submit-btn {
+  text-align: center;
+  width: 640px;
+  padding: 16px 24px;
+  margin: 0 0 24px;
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 32px;
+  background-color: var(--Secondary-400);
+  color: var(--Cool-Gray-100);
+  border: none;
+  border-radius: 9999px;
+}
+
+#submit-btn:focus {
+  background-color: #3692FF;
+}
+
+/* OAuth */
+.thirth-party-auth {
+  display: flex;
+  font-family: Pretendard;
+  font-size: 1remx;
+  font-weight: 500;
+  line-height: 26px;
+  width: 640px;
+  padding: 16px 24px;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E6F2FF;
+  gap: 18px;
+}
+
+.thirth-party-auth-imgs {
+  display: flex;
+  gap: 16px;
+}
+
+.thirth-party-auth-imgs img{
+  height: 42px;
+  width: 42px; 
+}
+
+/* lastelement */
+.signup-para {
+  display: flex;
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 24px;
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+  margin-top: 24px;
+
+}
+
+.signup-para-a {
+  color: var(--Primary-100);
+}
+
+
+/* mission: cursor */
+a {
+  cursor:pointer;
+}

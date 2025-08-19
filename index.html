@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>판다마켓</title>
   <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" href="./css/index.css"/>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFWX60JDRX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-EFWX60JDRX');
+  </script>
 </head>
 <body>
   <nav>
@@ -28,7 +37,11 @@
       <a href="./items">구경하러 가기</a>
     </div>
 
-    <img src="./src/hero/Img_home_top.png" alt="asdas">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture  -->
+    <picture>
+      <source media="(min-width: 650px)" srcset="./src/hero/Img_home_top.png">
+      <img src="./src/hero/Img_home_top.png" alt="asdas">
+    </picture>
   </section>
 
   <main>
@@ -84,7 +97,10 @@
           판다마켓 중고 거래
         </h2>
         <div class="pandas">
-          <img src="./src/landing/Img_home_bottom.png" alt="pandas!">
+          <picture>
+            <source media="(min-width: 650px)" srcset="./src/landing/Img_home_bottom.png">
+            <img src="./src/landing/Img_home_bottom.png" alt="pandas!">
+          </picture>
         </div>
       </div>
     </section>
@@ -97,12 +113,14 @@
         <a href="./faq">FAQ</a>
       </div>
       <div class="sns-images">
-        <a href="https://www.youtube.com/results?search_query=코드잇_판다마켓" target="_blank"><img src="./src/sns/Group (1).svg" alt="youtube"></a>
-        <a href="https://www.facebook.com/" target="_blank"><img src="./src/sns/Group.svg" alt="fb"></a>
+        <a href="https://www.youtube.com/results?search_query=코드잇_판다마켓" target="_blank"><img src="./src/sns/ic_youtube.svg" alt="youtube"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="./src/sns/ic_fb.svg" alt="facebook"></a>
         <a href="https://www.instagram.com/" target="_blank"><img src="./src/sns/ic_instagram.svg" alt="instagram"></a>
         <a href="https://www.twitter.com/" target="_blank"><img src="./src/sns/ic_twitter.svg" alt="twitter"></a>
       </div>
     </div>
   </footer>
 </body>
+
+
 </html>
