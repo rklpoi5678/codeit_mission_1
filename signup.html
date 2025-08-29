@@ -77,6 +77,13 @@
   </main>
 
   <script type="module" src="./js/signup.js"></script>
+  <script>
+    //고객이 우리 서비스에 회원가입 하는상황 -> 회원가입 수
+    //기본 GA이벤트 이벤트 종류 사용
+      gtag("event","signup", {
+        method: "email",
+      })
+  </script>
 </body>
 
 </html>

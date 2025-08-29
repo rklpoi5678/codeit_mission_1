@@ -56,8 +56,17 @@
     </div>
   </main>
 
-  <button id="test">open Modal</button>
-  
   <script type="module" src="./js/login.js"></script>
+  <script>
+    // 로그인 페이지에서 사용자가 얼마나 회원가입으로 넘어가는가(퍼포먼스용(클릭수))
+    // 회원가입에서 로그인페이지로 리다이렉팅될때 조회수 섞일수도..
+    document.querySelector(".signup-para-a").addEventListener("click", () => {
+      gtag("event","signup_page_click", {
+        event_category: "button",
+        event_label: "회원가입으로 넘어가는 버튼",
+        value: 1,
+      })
+    });
+  </script>
 </body>
 </html>

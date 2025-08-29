@@ -14,6 +14,7 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFWX60JDRX"></script>
   <script>
+    // 측정ID 공개ok
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -98,6 +99,7 @@
     <section class="panda-section">
       <div class="panda-content">
         <h2 class="panda-text">
+
           믿을 수 있는<br/>
           판다마켓 중고 거래
         </h2>
@@ -125,5 +127,12 @@
       </div>
     </div>
   </footer>
+  <script>
+    // ga기본 이벤트 테스트 자동 이벤트를 끄고 수동으로 페이지뷰수 조회
+    gtag("event", "page-view",{
+      page_title: "판다마켓 메인페이지",
+      page_url : window.location.href,
+    })
+  </script>
 </body>
 </html>

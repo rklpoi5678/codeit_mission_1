@@ -4,7 +4,6 @@
 바로가기 링크:[판다마켓](https://pandasmarket.netlify.app/)
 
 ## 요구정의사항
-
 **codeit_sprint_mission3 (25-08-26 ~ 25-09-02)**
 ### 공통
 
@@ -90,11 +89,9 @@ Mobile: 375px 이상 ~ 743px 이하
 - [x] FAQ -> ('/faq')이동
 - [x] sns 아이콘 클릭시 각각 홈페이지로 이동
 </details>
-
 ---
 
 ## 멘토님에게 남길 메시지
-
 zod,superStruct 참고 해서 한번 유효성 검사코드를 리펙토링해보겠습니다. 🤔
 
 ## 참고사항

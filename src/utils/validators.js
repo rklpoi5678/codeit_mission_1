@@ -72,7 +72,7 @@ export function validateNickName() {
   } else {
     $nickNameError.textContent = !value
       ? ($nickNameError.textContent = "닉네임을 입력해주세요.")
-      : ($nickNameError.textContent = `닉네임을 ${MIN_NAME_LENGTH}자 이상 입력해주세요.`);
+      : ($nickNameError.textContent = `닉네임은 ${MIN_NAME_LENGTH}자 이상 입력해주세요.`);
     $nickName.classList.toggle("input-error", !false);
     return false;
   }
@@ -102,5 +102,3 @@ export function validatePasswordCheker() {
     return false;
   }
 }
-
-// TODO: 클래스를 사용하여 리펙토링
