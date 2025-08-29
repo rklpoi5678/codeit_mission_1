@@ -1,21 +1,7 @@
-
-/* misson responsive (rem)*/
-
-/*
-*  html(부모사이즈): https://fightingsean.tistory.com/7
-*  변환: https://www.pixelconverter.com/ko
-*/
-
-html {
-  font-size: 100%; /* default: 16px */
-}
-
 body {
   font-size: 1rem;
   margin-top: 70px;
 }
-
-/** */
 
 nav {
   position: fixed;
@@ -49,18 +35,19 @@ nav {
   height: 40px;
 }
 
-.logo-title > a{
+.logo-title>a {
   display: inline-flex;
   text-decoration: none;
-  align-items: flex-end ;
+  align-items: flex-end;
   margin-left: 8.59px;
   font-family: "ROKAF Sans";
-  font-size: 25.633px; /* 1.6020625rem */
+  font-size: 25.633px;
+  /* 1.6020625rem */
   font-weight: 700;
   color: #3692FF;
 }
 
-.logo-box > a {
+.logo-box>a {
   background-color: #3692FF;
   padding: 12px 23px;
   border-radius: 8px;
@@ -92,14 +79,15 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 7px;
-} 
+}
 
 .hero-title {
   font-family: 'Pretendard';
 }
 
 .hero-title h1 {
-  font-size: 2.5rem; /* 40px */
+  font-size: 2.5rem;
+  /* 40px */
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
@@ -109,7 +97,8 @@ nav {
 .hero-title a {
   color: #F9FAFB;
   text-decoration: none;
-  font-size: 1.25rem; /* 20px */
+  font-size: 1.25rem;
+  /* 20px */
   font-weight: 600;
   line-height: 32px;
 }
@@ -127,7 +116,6 @@ nav {
 /*--- section-start ---*/
 .feature-section {
   padding: 138px 344px;
-  
 }
 
 .feature-section img {
@@ -140,7 +128,6 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 64px;
-  
 }
 
 .feature-two {
@@ -149,7 +136,6 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 64px;
- 
 }
 
 .feature-title {
@@ -157,7 +143,8 @@ nav {
   flex-direction: column;
   gap: 12px;
   text-align: left;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem;
+  /* 18px */
   line-height: 26px;
   font-family: 'Pretendard';
 }
@@ -178,15 +165,18 @@ nav {
   padding-left: 30px;
   background-color: #FCFCFC;
 }
+
 .feature-one-para {
-  font-size: 1.125rem; /* =18px */
+  font-size: 1.125rem;
+  /* =18px */
   font-weight: 700;
   line-height: 26px;
   color: #3692FF;
 }
 
 .feature-one-heading {
-  font-size: 2.5rem; /* 40px */
+  font-size: 2.5rem;
+  /* 40px */
   font-weight: 700;
   color: #374151;
   line-height: 140%;
@@ -200,13 +190,15 @@ nav {
   align-items: flex-end;
   text-align: right;
   gap: 12px;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem;
+  /* 18px */
   font-weight: 700;
   line-height: 26px;
 }
 
 .feature-two-para {
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem;
+  /* 18px */
   font-weight: 700;
   line-height: 26px;
   color: #3692FF;
@@ -214,7 +206,8 @@ nav {
 }
 
 .feature-two-heading {
-  font-size: 2.5rem; /* 40px */
+  font-size: 2.5rem;
+  /* 40px */
   font-weight: 700;
   color: #374151;
   line-height: 140%;
@@ -223,7 +216,8 @@ nav {
 }
 
 .feature-description {
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem;
+  /* 24px */
   font-family: 'Pretendard';
   font-weight: 500;
   line-height: 32px;
@@ -245,12 +239,12 @@ nav {
 }
 
 .panda-text {
-  font-size: 2rem; /* 32px */
+  font-size: 2.5rem;
+  /* 32px */
   font-weight: 700;
   color: #1F2937;
   margin-bottom: 60px;
   font-family: 'Pretendard';
-  
 }
 
 .pandas img {
@@ -260,11 +254,11 @@ nav {
   margin-bottom: -5px;
 }
 
-/* footer section */
+/* footer-section */
 footer {
   display: flex;
   justify-content: space-between;
-  background-color: #111827;
+  background-color: var(--color-secondary-900);
   /* mission 왼쪽/오른쪽 여백 유지*/
   padding: 32px 200px;
   flex-direction: row;
@@ -285,14 +279,16 @@ footer {
   color: #9CA3AF;
   text-align: center;
   font-family: 'Pretendard';
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
+  /* 16px */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 .footer-div a {
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
+  /* 16px */
   font-weight: 400;
   line-height: normal;
   font-family: 'Pretendard';
@@ -319,85 +315,233 @@ footer {
 .here-cta,
 .footer-div a,
 .sns-images a {
-  cursor:pointer;
+  cursor: pointer;
 }
 
-/* 반응형 미디어 쿼리 (깨짐방지)*/
-@media screen and (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    height: auto;
-  }
+/*=============================================
+=            tablet media                     =
+=============================================*/
+@media screen and (max-width: 1200px) {
 
-  .panda-content {
-    flex-direction: column;
-    gap: 24px;
-  }
-  
-  /* 확대시 nav 요소 서로 깨짐 방지 */
   .logo-box {
     padding: 0 24px;
   }
 
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .hero-section .hero-title {
+    gap: 24px;
+    margin-top: 84px;
+  }
+
+  .hero-section br {
+    display: none;
+  }
+
+  .hero-section picture {
+    justify-content: center;
+  }
+
+  .hero-section img {
+    margin-top: 211px;
+  }
+
+  /*----------  tfeature block  ----------*/
+  .feature-section {
+    width: 100%;
+    padding: 0;
+    margin: 24px;
+  }
+
+  .feature-section .feature-title,
+  .feature-section .feature-two-title {
+    gap: 0;
+  }
+
+  .feature-one-heading,
+  .feature-two-heading {
+    font-size: var(--font-3xl);
+    margin: 16px 0 24px;
+  }
+
+  .feature-one-para,
+  .feature-two-para {
+    font-size: var(--font-2lg);
+  }
+
+  .feature-description {
+    font-size: var(--font-2lg);
+  }
+
+  .feature-section .feature-card-br {
+    display: none;
+  }
+
+  .feature-card,
+  .feature-two-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .feature-two-card {
+    align-items: flex-end;
+  }
+
+  .feature-card img,
+  .feature-two-card img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /*----------  tpanda block  ----------*/
+  .panda-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .panda-content {
+    gap: 0;
+  }
+
+  .panda-text {
+    padding: 207px 217px;
+    margin: 0;
+    font-size: var(--font-3xl);
+    line-height: 140%;
+    color: var(--color-secondary-700);
+  }
+
+  .pandas img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    margin-bottom: -5px;
+  }
+
+  /*----------  tfooter block  ----------*/
   footer {
     flex-direction: column;
     padding: 24px;
     text-align: center;
   }
+}
 
-  /* TODO 모바일 테스트 */
-  .feature-section {
-    padding: 80px 24px;
+/*=============================================
+=            mobile media                     =
+=============================================*/
+@media screen and (max-width: 744px) {
+  .logo-box {
+    padding: 0 24px;
+  }
+
+  .hero-section {
     flex-direction: column;
-    gap: 48px;
-  }
-
-  .feature-one,
-  .feature-two {
-    flex-direction: column !important;
-    text-align: center;
     align-items: center;
+    height: auto;
   }
-}
 
-@media screen and (max-width: 1700px) {
-  .feature-section img {
-    width: 240px;
-    height: 222px;
+  .hero-section .hero-title h1 {
+    gap: 18px;
+    text-align: center;
+    font-size: var(--font-3xl);
   }
-  .feature-one-heading {
-    font-size: 2rem;
+
+  .hero-section br {
+    display: initial;
   }
-  .feature-one-para {
-    font-size: 0.75rem;
+
+  .hero-section picture {
+    justify-content: center;
   }
-  .feature-description {
-    font-size: 1rem;
+
+  .hero-section img {
+    margin-top: 132px;
   }
+
+  /*----------  mfeature block  ----------*/
+  .feature-section {
+    width: 100%;
+    margin: 54px 16px !important;
+  }
+
+  .feature-section .feature-title,
+  .feature-section .feature-two-title {
+    gap: 0;
+  }
+
+  .feature-one-heading,
   .feature-two-heading {
-    font-size: 2rem;
+    font-size: var(--font-2xl);
+    margin: 8px 0 16px;
   }
-  .feature-two-para {
-    font-size: 0.75rem;
-  }
-}
 
-@media screen and (max-width: 1090px) {
-  
-  .feature-card {
+  .feature-one-para,
+  .feature-two-para {
+    font-size: var(--font-lg);
+  }
+
+  .feature-description {
+    font-size: var(--font-lg);
+  }
+
+  .feature-section .feature-card-br {
+    display: none;
+  }
+
+  .feature-card,
+  .feature-two-card {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 0;
   }
 
   .feature-two-card {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
+    align-items: flex-end;
   }
-  
-  .feature-section img {
-    width: 240px;
-    height: 222px;
+
+  .feature-card img,
+  .feature-two-card img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /*----------  mpanda block  ----------*/
+  .panda-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .panda-text {
+    padding: 207px 217px;
+    margin: 0;
+    font-size: var(--font-3xl);
+    line-height: 140%;
+    color: var(--color-secondary-700);
+    white-space: nowrap;
+  }
+
+  .pandas img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    margin-bottom: -5px;
+  }
+
+  /*----------  mfooter block  ----------*/
+  footer {
+    flex-direction: column;
+    padding: 24px;
+    text-align: center;
   }
 }
+
+/*
+  TODOs: html요소 검사 및 반응형 footer요소 테스트
+*/

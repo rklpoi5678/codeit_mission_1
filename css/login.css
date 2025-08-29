@@ -1,13 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 100%; /* default: 16px */
-}
-
 body {
   font-size: 1rem;
+  transition: background-color 0.5s ease;
 }
 
 main {
@@ -41,7 +34,7 @@ main {
   color: var(--brand-blue);
 }
 
-/* 로그인 & 회원가입폼 */
+/* ---------------- form ------------------ */
 form {
   display: flex;
   flex-direction: column;
@@ -53,29 +46,49 @@ input {
   border: none;
   border-radius: 12px;
   padding: 16px 24px;
-  margin-bottom: 24px;
-  background-color: var(--Cool-Gray-100);
+  margin-bottom: 8px;
+  background-color: var(--cool-gray-100);
 }
 
-/* eye-icon */
+/* eye-icons */
+.password-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
 .password {
-  background-image: url(../src/btn_visibility_off.svg);
-  background-repeat: no-repeat;
-  background-position: 98%;
-  
+  display: inline-block;
+  width: 100%;
 }
 
-.btn_visibilty_icon {
-  width: 24px;
+.btn_visibility_icon {
+  position: absolute;
+  display: inline-block;
+  left: 93%;
+  margin: 12px 24px 0 0;
   height: 24px;
 }
 
-form > label {
+form>label {
   font-family: Pretendard;
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.625rem;
   margin-bottom: 16px;
+}
+
+/* error-message */
+.error {
+  color: var(--color-error-red); 
+  font-family: Pretendard;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.input-error {
+  border: 1px solid var(--color-error-red);
 }
 
 #submit-btn {
@@ -87,8 +100,8 @@ form > label {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 32px;
-  background-color: var(--Secondary-400);
-  color: var(--Cool-Gray-100);
+  background-color: var(--color-secondary-400);
+  color: var(--cool-gray-100);
   border: none;
   border-radius: 9999px;
 }
@@ -98,7 +111,7 @@ form > label {
 }
 
 /* OAuth */
-.thirth-party-auth {
+.third-party-auth {
   display: flex;
   font-family: Pretendard;
   font-size: 1remx;
@@ -113,17 +126,17 @@ form > label {
   gap: 18px;
 }
 
-.thirth-party-auth-imgs {
+.third-party-auth-imgs {
   display: flex;
   gap: 16px;
 }
 
-.thirth-party-auth-imgs img{
+.third-party-auth-imgs img {
   height: 42px;
-  width: 42px; 
+  width: 42px;
 }
 
-/* last-element */
+/* ---------------- last-element ------------------ */
 .signup-para {
   display: flex;
   font-family: Pretendard;
@@ -134,15 +147,145 @@ form > label {
   align-content: center;
   gap: 4px;
   margin-top: 24px;
-
 }
 
 .signup-para-a {
-  color: var(--Primary-100);
+  color: var(--color-primary-100);
 }
-
 
 /* mission: cursor */
-a {
-  cursor:pointer;
+a,
+.btn_visibility_icon {
+  cursor: pointer;
 }
+
+/**/
+.modal-show {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  z-index: 10;
+}
+
+.modal-container {
+  position: fixed;
+  display: none;
+  background-color: white;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  width: 540px;
+  height: 250px;
+  transform: translate(-50%,-50%);
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+}
+
+.modal-btn {
+  display: block;
+  align-self: flex-end;
+}
+
+.modal-para {
+  color: var(--color-secondary-800);
+  text-align: center;
+  font-size: var(--font-lg);
+  font-family: Pretendard;
+  font-weight: 500;
+}
+
+.modal-button {
+  position: absolute;
+  right: 10px;
+  bottom: 28px;
+  border: 0;
+  border-radius: 8px;
+  width: 128px;
+  height: 48px;
+  padding: 12px 23px;
+  text-align: center;
+  background-color: var(--brand-blue);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+#test {
+  z-index: 11;
+}
+/*=============================================
+=            tablet media                     =
+=============================================*/
+@media screen and (max-width: 1200px) {
+  main {
+    padding: 48px 52px 431px 52px;
+  }
+
+}
+/*=============================================
+=            mobile media                     =
+=============================================*/
+@media screen and (max-width: 744px) {
+  main {
+    display: flex;
+    padding: 24px 15px 255px 16px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 400%;
+  }
+
+
+  .btn_visibility_icon {
+    left: 91%;
+  }
+
+  #submit-btn,
+  .third-party-auth {
+    width: 100%;;
+    max-width: 400px;
+  }
+
+  .auth-header img{
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+  }
+
+  .auth-hearder p {
+    font-size: var(--font-3xl);
+    max-width: 400px;
+  }
+
+  .modal-container {
+    width: 327px;
+    height: 220px;
+  }
+
+  .modal-para {
+    position: absolute;
+    bottom: 120px;
+  }
+
+  .modal-button {
+    position: absolute;
+    right: auto;
+    left: auto;
+    bottom: 23px;
+  }
+}
+
