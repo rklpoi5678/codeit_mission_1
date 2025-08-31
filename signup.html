@@ -32,18 +32,18 @@
     <form id="login" method="POST" action="/items" autocomplete="off">
       <label for="email">이메일</label>
       <input id="email" name="email" type="email" placeholder="이메일을 입력해주세요" aria-label="이메일을 입력해주세요" required>
-      <span id="emailError" class="error"></span>
+      <span id="email-error" class="error"></span>
 
       <label for="nickname">닉네임</label>
       <input id="nickname" name="nickname" type="text" placeholder="닉네임을 입력해주세요" aria-label="닉네임을 입력해주세요" required>
-      <span id="nickNameError" class="error"></span>
+      <span id="nickname-error" class="error"></span>
 
       <label for="password">비밀번호</label>
       <div class="password-wrapper">
         <input id="password" class="password" name="password" type="password" placeholder="비밀번호를 입력해주세요"
           aria-label="비밀번호를 입력해주세요" required>
         <img class="btn_visibility_icon" src="./public/images/btn_visibility_off.svg" alt="비밀번호 표시">
-        <span id="pwError" class="error"></span>
+        <span id="pw-error" class="error"></span>
       </div>
 
       <label for="pw-check">비밀번호 확인</label>
@@ -51,7 +51,7 @@
         <input id="pw-check" class="password" name="passwordConfirm" type="password" placeholder="비밀번호를 입력해주세요"
           aria-label="비밀번호를 입력해주세요" required>
         <img class="btn_visibility_icon" src="./public/images/btn_visibility_off.svg" alt="비밀번호 표시">
-        <span id="pwErrorCheck" class="error"></span>
+        <span id="pw-check-error" class="error"></span>
       </div>
 
       <!--조건에 맞지 않으면 비활성화-->
