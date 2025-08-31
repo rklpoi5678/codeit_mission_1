@@ -1,7 +1,6 @@
-// import { validateEmail, validatePassword } from "../src/utils/validators.js";
-import modalShow from "../src/modal/LoginModal.js";
-import USER_DATA from "../src/db.js";
-import { EmailValidator, PasswordValidator } from "../src/utils/validators.js";
+import modalShow from "./modal/LoginModal.js";
+import USER_DATA from "../db.js";
+import { EmailValidator, PasswordValidator } from "../utils/validators.js";
 
 // DOM이 로드시(방어코드)
 document.addEventListener("DOMContentLoaded", () => {
@@ -65,10 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (input.type === "password") {
         input.type = "text";
-        icon.src = "./public/images/btn_visibility_on.svg";
+        icon.src = "../../public/images/btn_visibility_on.svg";
       } else {
         input.type = "password";
-        icon.src = "./public/images/btn_visibility_off.svg";
+        icon.src = "../../public/images/btn_visibility_off.svg";
       }
     });
   });

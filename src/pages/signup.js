@@ -3,9 +3,9 @@ import {
   PasswordValidator,
   PasswordCheckValidator,
   NicknameValidator,
-} from "../src/utils/validators.js";
-import modalShow from "../src/modal/LoginModal.js";
-import USER_DATA from "../src/db.js";
+} from "../../src/utils/validators.js";
+import modalShow from "./modal/LoginModal.js";
+import USER_DATA from "../db.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const $email = document.getElementById("email");
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (user) {
       modalShow("사용 중인 이메일입니다");
     } else {
-      location.href = "/login";
+      location.href = "/login.html";
     }
   });
 
@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (input.type === "password") {
         input.type = "text";
-        icon.src = "./public/images/btn_visibility_on.svg";
+        icon.src = "../../public/images/btn_visibility_on.svg";
       } else {
         input.type = "password";
-        icon.src = "./public/images/btn_visibility_off.svg";
+        icon.src = "../../public/images/btn_visibility_off.svg";
       }
     });
   });
