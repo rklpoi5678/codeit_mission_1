@@ -1,0 +1,25 @@
+## ProductService
+GET https://panda-market-api-crud.vercel.app/products
+
+###
+GET https://panda-market-api-crud.vercel.app/products?page=1&pageSize=10&keyword=테스트 상품
+
+###
+POST https://panda-market-api-crud.vercel.app/products
+Content-Type: application/json
+
+{
+  "name": "every one~~ Hello",
+  "description": "3feet",
+  "price": 0,
+  "tags": ["3team"],
+  "images": ["http://url.com/..."]
+}
+
+###
+PATCH https://panda-market-api-crud.vercel.app/products/1845
+
+###
+
+DELETE https://panda-market-api-crud.vercel.app/products/1845
+

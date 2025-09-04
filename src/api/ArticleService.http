@@ -1,0 +1,27 @@
+## ArticleService
+GET https://panda-market-api-crud.vercel.app/articles
+
+###
+GET https://panda-market-api-crud.vercel.app/articles?page=1&pageSize=10&keyword=테스트
+
+###
+POST https://panda-market-api-crud.vercel.app/articles
+Content-Type: application/json
+
+{
+  "title": "helloEveryOne",
+  "content": "3steps",
+  "image": "https://example.com/..."
+}
+
+###
+PATCH https://panda-market-api-crud.vercel.app/articles/1800
+Content-Type: application/json
+
+{
+  "title": "변경된 제목",
+  "content": "변경됨",
+}
+###
+
+DELETE https://panda-market-api-crud.vercel.app/articles/1821
