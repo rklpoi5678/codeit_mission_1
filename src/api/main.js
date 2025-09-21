@@ -1,5 +1,5 @@
 // import * as articleApi from "./ArticleService.js";
-import * as productApi from './ProductService.js';
+// import * as productApi from './ProductService.js';
 
 /** -----------Articles ------------- */
 

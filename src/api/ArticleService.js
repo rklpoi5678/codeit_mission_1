@@ -1,4 +1,4 @@
-import { BASE_URL } from "../constants/api.js";
+import { app } from "@/constants/api";
 
 /**
  * @param {String} title
@@ -7,19 +7,20 @@ import { BASE_URL } from "../constants/api.js";
  */
 export async function createArticle(title, content, image) {
   try {
-    const res = await fetch(`${BASE_URL}/articles`, {
-      method: "POST",
-      body: JSON.stringify({
-        title: title,
-        content: content,
-        image: image,
-      }),
-      headers: {
-        "Content-Type": "application/json",
+    const res = await app.post(
+      `/articles`,
+      {
+        title,
+        content,
+        image,
       },
-    });
-    const data = await res.json();
-    return data;
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return res.data;
   } catch (err) {
     console.log(err.status);
     console.log(err.message);
@@ -35,55 +36,75 @@ export async function createArticle(title, content, image) {
  */
 export async function getArticleList(page, pageSize, keyword) {
   try {
-    const res = await fetch(
-      `${BASE_URL}/articles?page=${page}&pageSize=${pageSize}&keyword=${keyword}`
+    const res = await app.get(
+      `/articles?page=${page}&pageSize=${pageSize}&keyword=${keyword}`
     );
-    const data = await res.json();
-    return data;
+    return res.data;
   } catch (err) {
-    alert(err.status);
+    console.log(err.status);
+    console.log(err.message);
+    throw new Error("아티클 리스트를 가져오지 못했습니다.");
   } finally {
     console.log("getArticelList 패치");
   }
 }
 
 export async function getArticle() {
-  const data = await fetch(`${BASE_URL}/articles`).then((res) => res.json());
-  return data;
+  try {
+    const res = await app.get(`/articles`);
+    return res.data;
+  } catch (err) {
+    console.log(err.status);
+    console.log(err.message);
+    throw new Error("아티클 리스트를 가져오지 못했습니다.");
+  } finally {
+    console.log("getArticles 실행 완료");
+  }
 }
 
 /**
  * @param {Number} articleId
  */
 export async function patchArticle(articleId) {
-  const data = await fetch(`${BASE_URL}/articles/${articleId}`, {
-    method: "PATCH",
-    body: JSON.stringify({
-      title: "변경된 제목",
-      content: "변경됨",
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => res.json())
-    .catch((err) => console.log("It is TestCode", err));
-
-  return data;
+  try {
+    const res = await app.patch(
+      `/articles/${articleId}`,
+      {
+        title: "변경된 제목",
+        content: "변경됨",
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return res.data;
+  } catch (err) {
+    console.log(err.status);
+    console.log(err.message);
+    throw new Error("Patch 요청을 실패 하였습니다.");
+  } finally {
+    console.log("patchArticle 실행 완료");
+  }
 }
 
 /**
  * @param {Number} articleId
  */
 export async function deleteArticle(articleId) {
-  const data = await fetch(`${BASE_URL}/articles/${articleId}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => res.json())
-    .catch((err) => console.log("It is TestCode", err));
-
-  return data;
+  try {
+    const res = await app.delete(`/articles/${articleId}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return res.data;
+  } catch (err) {
+    console.log(err.status);
+    console.log(err.message);
+    throw new Error("Delete 요청을 실패 하였습니다.");
+  } finally {
+    console.log("deleteArticle 실행 완료");
+  }
 }

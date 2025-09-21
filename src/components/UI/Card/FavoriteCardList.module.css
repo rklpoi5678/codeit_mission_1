@@ -1,0 +1,7 @@
+.favoriteContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+  padding-top: var(--font-lg);
+}

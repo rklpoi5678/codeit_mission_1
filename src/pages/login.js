@@ -1,28 +1,28 @@
-import modalShow from "./modal/LoginModal.js";
+import modalShow from "../components/Modal/LoginModal.js";
 import USER_DATA from "../db.js";
 import { EmailValidator, PasswordValidator } from "../utils/validators.js";
 
 // DOM이 로드시(방어코드)
 document.addEventListener("DOMContentLoaded", () => {
   const $email = document.getElementById("email");
+  const $emailError = document.getElementById("email-error");
 
-  const $emailError = document.getElementById("emailError");
   const $pw = document.getElementById("password");
-  const $pwError = document.getElementById("pwError");
+  const $pwError = document.getElementById("pw-error");
 
   const $submitBtn = document.getElementById("submit-btn");
   const $login = document.getElementById("login");
   const $pwEyeBtn = document.querySelectorAll(".btn_visibility_icon");
 
-  // 클래스 객체 생성 
+  // 클래스 객체 생성
   const emailValidator = new EmailValidator($email, $emailError);
-  const pwValidator = new PasswordValidator($pw, $pwError);
+  const passwordValidator = new PasswordValidator($pw, $pwError);
 
   /**
-   * 3.    이메일-비밀번호 유효성 검사
+   *     이메일-비밀번호 유효성 검사
    */
   function checkFormValid() {
-    const isValid = emailValidator.validate() && pwValidator.validate();
+    const isValid = emailValidator.validate() && passwordValidator.validate();
     $submitBtn.disabled = !isValid;
   }
 
@@ -32,11 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   $pw.addEventListener("focusout", () => {
-    pwValidator.validate();
+    passwordValidator.validate();
     checkFormValid();
   });
 
-  // form submit
+  /**
+   * @event submit
+   * @param {SubmitEvent} e - 폼 제출 이벤트 객체
+   *
+   */
   $login.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = $email.value.trim();
@@ -54,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /**
-   * 5. 비밀번호 표시 on/off
+   *   비밀번호 표시 on/off
    */
   $pwEyeBtn.forEach((btn) => {
     btn.addEventListener("click", () => {

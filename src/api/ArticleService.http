@@ -1,11 +1,11 @@
 ## ArticleService
-GET https://panda-market-api-crud.vercel.app/articles
+GET https://panda-market-api.vercel.app/articles
 
 ###
-GET https://panda-market-api-crud.vercel.app/articles?page=1&pageSize=10&keyword=테스트
+GET https://panda-market-api.vercel.app/articles?page=1&pageSize=10&keyword=테스트
 
 ###
-POST https://panda-market-api-crud.vercel.app/articles
+POST https://panda-market-api.vercel.app/articles
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ###
-PATCH https://panda-market-api-crud.vercel.app/articles/1800
+PATCH https://panda-market-api.vercel.app/articles/1800
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 }
 ###
 
-DELETE https://panda-market-api-crud.vercel.app/articles/1821
+DELETE https://panda-market-api.vercel.app/articles/1821

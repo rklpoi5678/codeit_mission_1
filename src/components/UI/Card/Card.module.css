@@ -1,0 +1,142 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-secondary-200);
+    transition: background-color 0.2s ease-in;
+  }
+}
+
+.favoriteImage {
+  background: var(--cool-gray-100);
+  width: 282px;
+  height: 282px;
+  border-radius: 16px;
+}
+
+.cardImage {
+  background: var(--cool-gray-100);
+  width: 221px;
+  height: 221px;
+  border-radius: 16px;
+}
+
+.cardDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cardTitle {
+  font-family: var(--font-family-base);
+  font-size: var(--font-md);
+  color: var(--color-secondary-800);
+  font-weight: 500;
+}
+
+.cardPrice {
+  font-family: var(--font-family-base);
+  font-size: var(--font-lg);
+  color: var(--color-secondary-800);
+  font-weight: 700;
+}
+
+.cardLikes {
+  color: var(--color-secondary-600);
+  font-family: var(--font-family-base);
+  font-size: var(--font-xs);
+  font-weight: 500;
+}
+
+/*--------- skeleton-section ----------*/
+.skeletonWrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+  padding: 20px;
+}
+
+.skeletonImage {
+  width: 221px;
+  height: 221px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeletonTitle {
+  position: absolute;
+  bottom: -1px;
+  width: 150px;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeletonPrice {
+  position: absolute;
+  bottom: -20px;
+  width: 150px;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeletonTextShort {
+  width: 60%;
+}
+
+/* 스켈레톤 애니메이션 */
+@keyframes shimmer {
+  0% {
+    background-position: -100%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}
+
+.skeletonImage,
+.skeletonTitle {
+  background: linear-gradient(90deg,
+      #e0e0e0 25%,
+      #f5f5f5 50%,
+      #e0e0e0 75%);
+  background-size: 200% 100%;
+}
+
+/* --------- media-qeury -------------*/
+@media screen and (max-width: 1200px) {
+  .favoriteImage {
+    width: 343px;
+    height: 343px;
+    border-radius: 20.176px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cardImage {
+    width: 168px;
+    height: 168px;
+  }
+
+  .skeletonWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 0;
+    padding: 0;
+  }
+
+  .skeletonImage {
+    width: 168px;
+    height: 168px;
+  }
+}

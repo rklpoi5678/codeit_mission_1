@@ -1,11 +1,11 @@
 ## ProductService
-GET https://panda-market-api-crud.vercel.app/products
+GET https://panda-market-api.vercel.app/products
 
 ###
-GET https://panda-market-api-crud.vercel.app/products?page=1&pageSize=10&keyword=테스트 상품
+GET https://panda-market-api.vercel.app/products?page=1&pageSize=10&orderBy=recent
 
 ###
-POST https://panda-market-api-crud.vercel.app/products
+POST https://panda-market-api.vercel.app/products
 Content-Type: application/json
 
 {
@@ -17,9 +17,9 @@ Content-Type: application/json
 }
 
 ###
-PATCH https://panda-market-api-crud.vercel.app/products/1845
+PATCH https://panda-market-api.vercel.app/products/1845
 
 ###
 
-DELETE https://panda-market-api-crud.vercel.app/products/1845
+DELETE https://panda-market-api.vercel.app/products/1845
 

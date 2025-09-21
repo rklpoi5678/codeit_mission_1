@@ -1,0 +1,104 @@
+.logoContainer {
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.logoBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  /* mission 왼쪽/오른쪽 여백 유지*/
+  padding: 0 200px;
+  max-width: 1920px;
+  margin: 0 auto;
+  border-bottom: #DFDFDF 1px solid;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoImg {
+  margin-right: 6.59px;
+  width: 40px;
+  height: 40px;
+}
+
+.logoTitleLink {
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  margin-left: 8.59px;
+  font-family: "ROKAF Sans";
+  font-size: 25.633px;
+  /* 1.6020625rem */
+  font-weight: 700;
+  color: #3692FF;
+}
+
+.logoBoxLink {
+  background-color: #3692FF;
+  padding: 12px 23px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #F3F4F6;
+}
+
+.logoParaContainer {
+  display: flex;
+  gap: 15px;
+  padding-left: 24px;
+}
+
+.logoPara {
+  color: var(--color-secondary-600);
+  font-family: var(--font-family-base);
+  font-size: var(--font-2lg);
+  font-weight: 700;
+  line-height: 26px;
+}
+
+@media screen and (max-width: 1200px) {
+  .logoBox {
+    justify-content: space-between;
+    padding: 24px;
+    max-width: 1200px;
+  }
+
+  .logoAvatar {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logoBox {
+    justify-content: space-between;
+    padding: 16px;
+    max-width: 768px;
+  }
+
+  .logoImg {
+    display: none;
+  }
+
+  .logoTitleLink {
+    margin-left: 0;
+    font-size: 20.202px;
+    /* 1.6020625rem */
+    font-weight: 700;
+  }
+
+  .logoPara {
+    font-size: var(--font-lg);
+  }
+
+  .logoParaContainer {
+    gap: 8px;
+    padding-left: 8px;
+  }
+}

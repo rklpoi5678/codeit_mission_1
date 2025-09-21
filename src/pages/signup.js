@@ -4,7 +4,7 @@ import {
   PasswordCheckValidator,
   NicknameValidator,
 } from "../../src/utils/validators.js";
-import modalShow from "./modal/LoginModal.js";
+import modalShow from "../components/Modal/LoginModal.js";
 import USER_DATA from "../db.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,25 +18,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const $pwError = document.getElementById("pw-error");
 
   const $pwCheker = document.getElementById("pw-check");
-  const $pwChekerError = document.getElementById("pw-check-error")
+  const $pwChekerError = document.getElementById("pw-check-error");
 
   const $submitBtn = document.getElementById("submit-btn");
   const $pwEyeBtn = document.querySelectorAll(".btn_visibility_icon");
-
   const $login = document.getElementById("login");
 
-  // 클래스 객체 생성 
+  // 클래스 객체 생성
   const emailValidator = new EmailValidator($email, $emailError);
   const nicknameValidator = new NicknameValidator($nickName, $nickNameError);
   const pwValidator = new PasswordValidator($pw, $pwError);
-  const pwChekerValidator = new PasswordCheckValidator($pwCheker, $pwChekerError, $pw);
+  const pwChekerValidator = new PasswordCheckValidator(
+    $pwCheker,
+    $pwChekerError,
+    $pw
+  );
 
   /**
    *     이메일-비밀번호 유효성 검사
    */
   function checkFormValid() {
     const isValid =
-      emailValidator.validate() && nicknameValidator.validate() && pwValidator.validate() && pwChekerValidator.validate(); 
+      emailValidator.validate() &&
+      nicknameValidator.validate() &&
+      pwValidator.validate() &&
+      pwChekerValidator.validate();
     $submitBtn.disabled = !isValid;
   }
 
@@ -46,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   $nickName.addEventListener("focusout", () => {
-    nicknameValidator.validate(); 
+    nicknameValidator.validate();
     checkFormValid();
   });
 
@@ -71,13 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     const email = $email.value;
-    const user = USER_DATA.find(
-      (user) => user.email === email
-    )
-    // const authMessage = userSignupAuth(email);
+    const user = USER_DATA.find((user) => user.email === email);
 
     if (user) {
-      modalShow("사용 중인 이메일입니다");
+      modalShow("사용 중인 이메일입니다.");
     } else {
       location.href = "/login.html";
     }

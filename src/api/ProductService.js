@@ -1,8 +1,4 @@
-import axios from "axios";
-
-const app = axios.create({
-  baseURL: "https://panda-market-api-crud.vercel.app",
-});
+import {app} from '@/constants/api'
 
 /**
  *
@@ -41,8 +37,8 @@ export async function createProduct(name, description, price, tags, images) {
 
 export async function getProduct() {
   try {
-    const res = await app.get("products");
-    return res.data;
+    const res = await app.get(`products`);
+    return res.data
   } catch (err) {
     console.log(err.status);
     console.log(err.message);
@@ -57,10 +53,10 @@ export async function getProduct() {
  * @param {Number} pageSize
  * @param {Number} keyword
  */
-export async function getProductList(page, pageSize, keyword) {
+export async function getProductList(page=1, pageSize=10, keyword='', orderBy='recent') {
   try {
     const res = await app.get(
-      `/products?page=${page}&pageSize=${pageSize}&keyword=${keyword}`
+      `/products?page=${page}&pageSize=${pageSize}&keyword=${keyword}&orderBy=${orderBy}`
     );
     return res.data;
   } catch (err) {
@@ -85,7 +81,7 @@ export async function patchProduct(productId) {
   } catch (err) {
     console.log(err.status);
     console.log(err.message);
-    throw new Error("Post 요청을 실패 하였습니다.");
+    throw new Error("Patch 요청을 실패 하였습니다.");
   } finally {
     console.log("patchProduct 실행 완료");
   }
@@ -101,8 +97,8 @@ export async function deleteProduct(productId) {
   } catch (err) {
     console.log(err.status);
     console.log(err.message);
-    throw new Error("Post 요청을 실패 하였습니다.");
+    throw new Error("delete 요청을 실패 하였습니다.");
   } finally {
-    console.log("patchProduct 실행 완료");
+    console.log("deleteProduct 실행 완료");
   }
 }

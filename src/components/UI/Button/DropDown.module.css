@@ -1,0 +1,76 @@
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-secondary-200);
+  border-radius: 12px;
+  background-color: #fff;
+  gap: 24px;
+  padding: 12px 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* dropdown active시 지정색*/
+.dropdownActive {
+  background-color: var(--color-secondary-200);
+  transition: background-color 0.5s ease;
+}
+
+.dropdownFilter {
+  position: absolute;
+  flex-shrink: 0;
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid var(--color-secondary-200);
+  border-radius: 12px;
+  margin-top: 8px;
+
+  :hover {
+    background-color: var(--color-secondary-200);
+  }
+}
+
+.dropdownHorizen {
+  border: 1px solid var(--color-secondary-200);
+  margin: 0;
+}
+
+.dropdownElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  /* 부모 사이즈 맞추기 위해 가로 -5px*/
+  height: 42px;
+  flex-shrink: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-lg);
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-secondary-800);
+  cursor: pointer;
+}
+
+/* 최신순이 사이즈가 달라보여 여백추가*/
+.topElement {
+  margin-top: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .dropdownBtn {
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    border: 1px solid var(--color-secondary-200);
+  }
+
+  .dropdownFilter {
+    right: 0%;
+  }
+}
