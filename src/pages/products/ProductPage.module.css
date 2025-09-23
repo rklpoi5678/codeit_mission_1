@@ -1,0 +1,115 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 360px;
+  gap: 39px;
+  max-width: 1920px;
+}
+
+.bestItemList {
+  padding-top: 26px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
+}
+
+.bestItemPara {
+  font-family: var(--font-family-base);
+  color: var(--color-secondary-900);
+  font-size: var(--font-xl);
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.sellItemContainerPostion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.sellItemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sellItemPara {
+  text-align: start;
+  font-family: var(--font-family-base);
+  color: var(--color-secondary-900);
+  font-size: var(--font-xl);
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.sellItemFilter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sellItemButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 12px 23px;
+  border-radius: 8px;
+  border: 0px;
+  background-color: var(--color-primary-100);
+  color: var(--cool-gray-100);
+  font-family: var(--font-family-base);
+  font-size: var(--font-lg);
+  font-weight: 600;
+  line-height: 26px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-primary-200);
+  }
+
+  &:active {
+    background-color: var(--color-primary-300);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    gap: 40px;
+    max-width: 1200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sellItemContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sellItemTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-right: 45px;
+    width: 100%;
+  }
+
+}

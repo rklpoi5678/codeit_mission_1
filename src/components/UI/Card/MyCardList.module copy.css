@@ -1,0 +1,42 @@
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  padding-top: var(--font-lg);
+}
+
+.emptyQuery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+  font-size: var(--font-xl);
+  font-weight: 700;
+
+  & button {
+    border: 0;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    background-color: var(--color-primary-100);
+    color: white;
+    font-weight: 700;
+    font-family: var(--font-family-base);
+  }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

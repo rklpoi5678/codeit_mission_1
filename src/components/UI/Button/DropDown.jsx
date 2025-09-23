@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowDownWideNarrow, ChevronDown, ChevronUp } from "lucide-react";
 
-import styles from "./DropDown.module.css"
+import styles from "./DropDown.module.css";
 
 export function DropDown({ deviceType, onChange, page }) {
   const [showPanel, setShowPanel] = useState(false);
@@ -9,15 +9,15 @@ export function DropDown({ deviceType, onChange, page }) {
 
   const handleOnClick = () => {
     setShowPanel(!showPanel);
-  }
+  };
 
   const handleOnChange = (value) => {
     onChange?.(value);
     if (value === 'recent') setFilterTitle('최신순');
     else if (value === 'favorite') setFilterTitle('좋아요순');
     setShowPanel(false);
-    page(1)
-  }
+    page(1);
+  };
 
   return (
     <div className={styles.dropdownContainer}>
@@ -49,5 +49,5 @@ export function DropDown({ deviceType, onChange, page }) {
         </ul>
       )}
     </div>
-  )
+  );
 }

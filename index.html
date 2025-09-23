@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,132 +18,32 @@
   <meta name="twitter:description" content="일상에서 모든 물건을 거래해보세요">
   <meta name="twitter:image" content="https://i.imgur.com/umFxnRX.jpeg">
   <title>판다마켓</title>
-  <link rel="stylesheet" href="./src/pages/index.css"/>
-  <link rel="stylesheet" href="./style.css"/>
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="./src/pages/index.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFWX60JDRX"></script>
   <script>
     // 측정ID 공개ok
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    
+
     gtag('config', 'G-EFWX60JDRX');
   </script>
 </head>
+
 <body>
-  <nav>
-    <div class="logo-box">
-      <div class="logo">
-        <div class="logo-title">
-          <a href="/"><img src="./public/images/logo.png" alt="pandamarket">판다마켓</a>
-        </div>
-      </div>
-      <a href="./src/pages/login.html">로그인</a>
-    </div>
-  </nav>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 
-  <section class="hero-section">
-    <div class="hero-title">
-      <h1>
-        일상의 모든 물건을<br/>
-        거래해 보세요
-      </h1>
-      <a href="/src/pages/items/items.html" id="load-react">구경하러 가기</a>
-      <!-- <div id="items-react"></div> -->
-    </div>
-
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture  -->
-    <picture>
-      <source media="(min-width: 650px)" srcset="./public/images/hero/Img_home_top.png">
-      <img src="./public/images/hero/Img_home_top.png" alt="asdas">
-    </picture>
-  </section>
-
-  <main>
-    <section class="feature-section">
-      <div class="feature-one">
-        <div class="feature-card">
-          <img src="./public/images/landing/Img_home_01.png" alt="">
-          <div class="feature-title">
-            <p class="feature-one-para">Hot item</p>
-            <h2 class="feature-one-heading">인기 상품을<br class="feature-card-br"/>확인해 보세요</h2>
-            <p class="feature-description">
-              가장 HOT한 중고거래 물품을<br/>
-              판다 마켓에서 확인해 보세요
-            </p>
-            </div>
-          </div>
-      </div>
-    </section>
-    <section class="feature-section">
-      <div class="feature-two">
-        <div class="feature-two-card">
-          <img src="./public/images/landing/Img_home_02.png" alt="">
-          <div class="feature-two-title">
-            <p class="feature-two-para">search</p>
-            <h2 class="feature-two-heading">
-              구매를 원하는<br class="feature-card-br">
-              상품을 검색하세요
-            </h2>
-            <p class="feature-description">구매하고 싶은 물품은 검색해서<br/>쉽게 찾아보세요</p>
-          </div>
-        </div>
-      </div> 
-    </section>
-    <section class="feature-section">
-      <div class="feature-one">
-        <div class="feature-card">
-          <img src="./public/images/landing/Img_home_03.png" alt="">
-          <div class="feature-title">
-            <p class="feature-one-para">Register</p>
-            <h2 class="feature-one-heading">판매를 원하는<br class="feature-card-br"/>
-                상품을 등록하세요
-            </h2>
-            <p class="feature-description">어떤 물건이든 판매하고 싶은 상품을<br/>쉽게 등록하세요</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="panda-section">
-      <div class="panda-content">
-        <h2 class="panda-text">
-
-          믿을 수 있는<br/>
-          판다마켓 중고 거래
-        </h2>
-        <div class="pandas">
-          <picture>
-            <source media="(min-width: 650px)" srcset="./public/images/landing/Img_home_bottom.png">
-            <img src="./public/images/landing/Img_home_bottom.png" alt="pandas!">
-          </picture>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-div">
-      <p>@codeit - 2024</p>
-      <div class="footer-link">
-        <a href="./privacy">Privacy Policy</a>
-        <a href="./faq">FAQ</a>
-      </div>
-      <div class="sns-images">
-        <a href="https://www.youtube.com/results?search_query=코드잇_판다마켓" target="_blank"><img src="./public/images/sns/ic_youtube.svg" alt="youtube"></a>
-        <a href="https://www.facebook.com/" target="_blank"><img src="./public/images/sns/ic_fb.svg" alt="facebook"></a>
-        <a href="https://www.instagram.com/" target="_blank"><img src="./public/images/sns/ic_instagram.svg" alt="instagram"></a>
-        <a href="https://www.twitter.com/" target="_blank"><img src="./public/images/sns/ic_twitter.svg" alt="twitter"></a>
-      </div>
-    </div>
-  </footer>
-  <!-- <script type="module" src="./index.jsx"></script> -->
   <script>
     // ga기본 이벤트 테스트 자동 이벤트를 끄고 수동으로 페이지뷰수 조회
-    gtag("event", "page_view",{
+    gtag("event", "page_view", {
       page_title: "판다마켓 메인페이지",
-      page_url : window.location.href,
+      page_url: window.location.href,
     })
   </script>
 </body>
+
 </html>

@@ -1,0 +1,235 @@
+.RegContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  gap: 24px;
+  margin: 96px 360px 162px;
+}
+
+.RegTitle {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+
+  & h2 {
+    font-family: var(--font-family-base);
+    font-size: var(--font-xl);
+    font-weight: 700;
+    line-height: 32px;
+  }
+}
+
+.disActiveBtn {
+  display: flex;
+  color: white;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--color-secondary-400);
+}
+
+.activeBtn {
+  display: flex;
+  color: white;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--color-primary-100);
+}
+
+.RegProductName {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 1200px;
+  margin-bottom: 32px;
+
+  & label {
+    color: var(--color-secondary-800);
+    font-family: var(--font-family-base);
+    font-size: var(--font-2lg);
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  & input {
+    height: 56px;
+    padding: 16px 24px;
+    gap: 10px;
+    border-radius: 12px;
+    background-color: var(--color-secondary-100);
+  }
+}
+
+.RegProductDescribe {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 1200px;
+  margin-bottom: 32px;
+
+  & label {
+    color: var(--color-secondary-800);
+    font-family: var(--font-family-base);
+    font-size: var(--font-2lg);
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  & textarea {
+    height: 282px;
+    padding: 16px 24px;
+    resize: none;
+    border: 0;
+    border-radius: 12px;
+    background-color: var(--color-secondary-100);
+  }
+}
+
+.RegProductPrice {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 1200px;
+  margin-bottom: 32px;
+
+  & label {
+    color: var(--color-secondary-800);
+    font-family: var(--font-family-base);
+    font-size: var(--font-2lg);
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  & input {
+    height: 56px;
+    padding: 16px 24px;
+    gap: 10px;
+    border-radius: 12px;
+    background-color: var(--color-secondary-100);
+  }
+}
+
+.RegSelectTagsContainer {
+  display: flex;
+  margin-top: 6px;
+  gap: 10px
+}
+
+.RegProductTag {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 1200px;
+
+  & label {
+    color: var(--color-secondary-800);
+    font-family: var(--font-family-base);
+    font-size: var(--font-2lg);
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  & input {
+    height: 56px;
+    padding: 16px 24px;
+    gap: 10px;
+    border-radius: 12px;
+    background-color: var(--color-secondary-100);
+  }
+}
+
+.RegSelectTags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  padding: 6px 12px 6px 16px;
+  border-radius: 26px;
+  background-color: var(--color-secondary-100);
+  gap: 10px;
+
+  & p {
+    font-family: var(--font-family-base);
+    font-size: var(--font-lg);
+    font-weight: 400;
+    line-height: 26px;
+  }
+}
+
+.TagIcons {
+  color: white;
+  background-color: var(--color-secondary-400);
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .RegContainer {
+    width: 100%;
+    margin: 18px 24px 194px;
+  }
+
+  .RegTitle {
+    width: 695px;
+  }
+
+  .RegProductName {
+    width: 695px;
+  }
+
+  .RegProductDescribe {
+    width: 695px;
+  }
+
+  .RegProductPrice {
+    width: 695px;
+  }
+
+  .RegProductTag {
+    width: 695px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .RegContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    max-width: 768px;
+    margin: 94px auto 186px;
+    padding: 24px;
+    overflow: hidden;
+  }
+
+  .RegTitle {
+    width: 100%;
+  }
+
+  .RegProductName {
+    width: 100%;
+  }
+
+  .RegProductDescribe {
+    width: 100%;
+  }
+
+  .RegProductPrice {
+    width: 100%;
+  }
+
+  .RegProductTag {
+    width: 100%;
+  }
+}

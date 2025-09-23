@@ -1,4 +1,4 @@
-import { app } from "@/constants/api";
+import { instance } from "@/constants/api";
 
 /**
  *
@@ -8,16 +8,15 @@ import { app } from "@/constants/api";
  * @param {String[]} tags > Tag
  * @param {String[]} images > UrlType pattern: ^https://...
  */
-export async function createProduct(name, description, price, tags, images) {
+export async function createItems(name, description, price, tags) {
   try {
-    const res = await app.post(
-      `/products`,
+    const res = await instance.post(
+      `api/items`,
       {
         name,
         description,
         price,
         tags,
-        images,
       },
       {
         headers: {
@@ -31,20 +30,20 @@ export async function createProduct(name, description, price, tags, images) {
     console.log(err.message);
     throw new Error("Post 요청을 실패 하였습니다.");
   } finally {
-    console.log("createProduct 실행 완료");
+    console.log("createItems 실행 완료");
   }
 }
 
-export async function getProduct() {
+export async function getItems() {
   try {
-    const res = await app.get(`products`);
+    const res = await instance.get(`products`);
     return res.data;
   } catch (err) {
     console.log(err.status);
     console.log(err.message);
     throw new Error("상품 리스트를 가져오지 못했습니다.");
   } finally {
-    console.log("getProduct 실행 완료");
+    console.log("getItems 실행 완료");
   }
 }
 
@@ -53,15 +52,15 @@ export async function getProduct() {
  * @param {Number} pageSize
  * @param {Number} keyword
  */
-export async function getProductList(
+export async function getItemsList(
   page = 1,
   pageSize = 10,
-  keyword = "",
+  // keyword = "",
   orderBy = "recent"
 ) {
   try {
-    const res = await app.get(
-      `/products?page=${page}&pageSize=${pageSize}&keyword=${keyword}&orderBy=${orderBy}`
+    const res = await instance.get(
+      `api/items?page=${page}&limit=${pageSize}&orderBy=${orderBy}`
     );
     return res.data;
   } catch (err) {
@@ -69,16 +68,16 @@ export async function getProductList(
     console.log(err.message);
     throw new Error("상품 리스트를 가져오지 못했습니다.");
   } finally {
-    console.log("getProductList 실행 완료");
+    console.log("getItemsList 실행 완료");
   }
 }
 
 /**
  * @param {Number} productId
  */
-export async function patchProduct(productId) {
+export async function patchItems(productId) {
   try {
-    const res = await app.patch(`products/${productId}`, {
+    const res = await instance.patch(`api/items/${productId}`, {
       name: "change",
       description: "change",
     });
@@ -88,22 +87,23 @@ export async function patchProduct(productId) {
     console.log(err.message);
     throw new Error("Patch 요청을 실패 하였습니다.");
   } finally {
-    console.log("patchProduct 실행 완료");
+    console.log("patchItems 실행 완료");
   }
 }
 
 /**
  * @param {Number} productId
  */
-export async function deleteProduct(productId) {
+export async function deleteItems(productId) {
   try {
-    const res = await app.delete(`products/${productId}`);
+    const res = await instance.delete(`api/items/${productId}`);
     return res.data;
   } catch (err) {
     console.log(err.status);
     console.log(err.message);
     throw new Error("delete 요청을 실패 하였습니다.");
   } finally {
-    console.log("deleteProduct 실행 완료");
+    console.log("deleteItems 실행 완료");
   }
 }
+

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card } from "./Card";
 import { getProductList } from "@/api/ProductService";
 
-import styles from './FavoriteCardList.module.css'
+import styles from './FavoriteCardList.module.css';
 
 export function FavoriteCardList({ page }) {
   const [products, setProducts] = useState([]);
@@ -11,18 +11,18 @@ export function FavoriteCardList({ page }) {
   useEffect(() => {
     if (!page) return;
 
-    setLoading(true)
+    setLoading(true);
     async function fetchProduct() {
       try {
-        const data = await getProductList(1, page, '', 'favorite')
+        const data = await getProductList(1, page, '', 'favorite');
         setProducts(data.list);
       } catch (err) {
         console.error('Failed getProduct:', err);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
-    fetchProduct()
+    fetchProduct();
   }, [page]);
 
   return (
@@ -38,5 +38,5 @@ export function FavoriteCardList({ page }) {
         />
       ))}
     </div>
-  )
+  );
 }

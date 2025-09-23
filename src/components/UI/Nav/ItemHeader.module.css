@@ -60,6 +60,15 @@
   font-size: var(--font-2lg);
   font-weight: 700;
   line-height: 26px;
+  text-decoration: none;
+
+  &:hover {
+    color: #3692FF;
+  }
+}
+
+.active {
+  color: #3692FF;
 }
 
 @media screen and (max-width: 1200px) {

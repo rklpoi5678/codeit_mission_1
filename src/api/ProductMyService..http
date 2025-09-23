@@ -1,0 +1,27 @@
+## ProductMyService
+GET https://nine-sprint-mission-be.onrender.com/
+
+###
+GET https://nine-sprint-mission-be.onrender.com/api/items/68d26772bad617146816b666
+
+###
+GET https://nine-sprint-mission-be.onrender.com/api/items?page=1&limit=3&orderBy=recent
+
+###
+POST https://nine-sprint-mission-be.onrender.com/api/items
+Content-Type: application/json
+
+{
+  "name": "evereHello",
+  "description": "3staps3333333333",
+  "price": 112345,
+  "tags": "3team"
+}
+
+###
+PATCH https://nine-sprint-mission-be.onrender.com/api/items/68d256a62602cdcedcb311e5
+
+###
+
+DELETE https://nine-sprint-mission-be.onrender.com/api/items/68d26772bad617146816b666
+

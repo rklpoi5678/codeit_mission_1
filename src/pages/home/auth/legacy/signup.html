@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="./login.css" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="preload" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFWX60JDRX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EFWX60JDRX');
+  </script>
+
+</head>
+
+<body>
+
+
+
+
+  <script type="module" src="./signup.js"></script>
+  <script>
+    //고객이 우리 서비스에 회원가입 하는상황 -> 회원가입 수
+    //기본 GA이벤트 이벤트 종류 사용
+      gtag("event","signup", {
+        method: "email",
+      })
+  </script>
+</body>
+
+</html>

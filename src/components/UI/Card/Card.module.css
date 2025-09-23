@@ -8,6 +8,14 @@
     background-color: var(--color-secondary-200);
     transition: background-color 0.2s ease-in;
   }
+
+  & Link {
+    text-decoration: none;
+  }
+}
+
+.link {
+  text-decoration: none;
 }
 
 .favoriteImage {

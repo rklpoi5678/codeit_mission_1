@@ -47,5 +47,5 @@ export function Pagination({ currentPage, totalPages, onPageChange }) {
         />
       </div>
     </div>
-  )
+  );
 }
