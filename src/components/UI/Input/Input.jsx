@@ -13,7 +13,7 @@ export function Input({ onSearch }) {
   };
 
   const handleOnChange = (e) => {
-    const value = e.target.value;
+    const value = e.target.value.trim();
     setKeyword(value);
   };
 

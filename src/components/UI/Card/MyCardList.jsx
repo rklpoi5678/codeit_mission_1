@@ -5,7 +5,7 @@ import { SearchX } from "lucide-react";
 
 import styles from './CardList.module.css';
 
-export function MyCardList({ page, currentPage, sortType, setTotalItems, backKeyword }) {
+export function MyCardList({ page, currentPage, sortType, setTotalItems, onSearch, keyword }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -17,7 +17,7 @@ export function MyCardList({ page, currentPage, sortType, setTotalItems, backKey
     async function fetchItems() {
       try {
         let data = [];
-        data = await getItemsList(currentPage, page, sortType); // 전체상품
+        data = await getItemsList(currentPage, page, keyword, sortType); // 전체상품
         setItems(data.data);
         setTotalItems(data.pagination.total);
       } catch (err) {
@@ -27,10 +27,10 @@ export function MyCardList({ page, currentPage, sortType, setTotalItems, backKey
       }
     }
     fetchItems();
-  }, [currentPage, page, sortType, setTotalItems]);
+  }, [currentPage, page, sortType, setTotalItems, keyword]);
 
   const handleClick = () => {
-    backKeyword('');
+    onSearch('');
   };
 
   if (!items.length) return <div className={styles.emptyQuery}><SearchX />검색 결과가 없습니다.<button onClick={handleClick}>검색초기화</button></div>;

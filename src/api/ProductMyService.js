@@ -55,12 +55,12 @@ export async function getItems() {
 export async function getItemsList(
   page = 1,
   pageSize = 10,
-  // keyword = "",
+  keyword = '',
   orderBy = "recent"
 ) {
   try {
     const res = await instance.get(
-      `api/items?page=${page}&limit=${pageSize}&orderBy=${orderBy}`
+      `api/items?page=${page}&limit=${pageSize}&keyword=${keyword}&orderBy=${orderBy}`
     );
     return res.data;
   } catch (err) {
@@ -106,4 +106,3 @@ export async function deleteItems(productId) {
     console.log("deleteItems 실행 완료");
   }
 }
-
