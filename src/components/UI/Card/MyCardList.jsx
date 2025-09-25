@@ -4,6 +4,7 @@ import { getItemsList } from "@/api/ProductMyService";
 import { SearchX } from "lucide-react";
 
 import styles from './CardList.module.css';
+import { Link } from "react-router-dom";
 
 export function MyCardList({ page, currentPage, sortType, setTotalItems, onSearch, keyword }) {
   const [items, setItems] = useState([]);
@@ -38,13 +39,14 @@ export function MyCardList({ page, currentPage, sortType, setTotalItems, onSearc
   return (
     <div className={styles.cardContainer}>
       {items.map((item) => (
-        <Card
-          key={item._id}
-          name={item.name}
-          price={item.price}
-          images={item.images}
-          loading={loading}
-        />
+        <Link to={`items/detail/${item._id}`} key={item._id}>
+          <Card
+            name={item.name}
+            price={item.price}
+            images={item.images}
+            loading={loading}
+          />
+        </Link>
       ))}
     </div>
   );

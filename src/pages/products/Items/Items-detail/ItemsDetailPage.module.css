@@ -1,0 +1,115 @@
+/* Flow bite */
+.section {
+  padding: 2rem 0;
+  background: #fff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.imageWrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.imageLight {
+  width: 100%;
+  display: block;
+}
+
+.imageDark {
+  width: 100%;
+  display: none;
+}
+
+.content {
+  margin-top: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.reviewBox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  color: #facc15; /* yellow-300 */
+}
+
+.rating {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.reviewLink {
+  font-size: 0.875rem;
+  text-decoration: underline;
+  color: #111;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.favoriteBtn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #111;
+  font-size: 0.875rem;
+}
+
+.cartBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.divider {
+  margin: 1.5rem 0;
+  border: 1px solid #e5e7eb;
+}
+
+.desc {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}

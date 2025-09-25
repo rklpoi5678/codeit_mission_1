@@ -30,45 +30,36 @@ export function ItemsPage() {
   };
 
   return (
-    <>
-      <main className={styles.mainContainer}>
-        <div className={styles.sellItemContainerPostion}>
-          {!isMobile ? (
-            <div className={styles.sellItemContainer}>
-              <p className={styles.sellItemPara}>판매 중인 상품</p>
-              <div className={styles.sellItemFilter}>
-                <Input className={styles.sellItemInput} onSearch={handleSearch} />
+    <main className={styles.mainContainer}>
+      <div className={styles.sellItemContainerPostion}>
+        <div className={styles.sellItemContainer}>
+          <div className={isMobile ? styles.sellItemTop : ""}>
+            <p className={styles.sellItemPara}>판매 중인 상품</p>
+            <div className={styles.sellItemFilter}>
+              <Input className={styles.sellItemInput} onSearch={handleSearch} />
+              <DropDown onChange={setSortType} page={goToPage} />
+              {!isMobile ? (
                 <Link to="/products/registration" className={styles.sellItemButton} >상품 등록하기</Link>
-                <DropDown onChange={setSortType} page={goToPage} />
-              </div>
-            </div>
-          ) : (
-            <div className={styles.sellItemContainer}>
-              <div className={styles.sellItemTop}>
-                <p className={styles.sellItemPara}>판매 중인 상품</p>
+              ) : (
                 <button className={styles.sellItemButton}>상품 등록하기</button>
-              </div>
-              <div className={styles.sellItemFilter}>
-                <Input className={styles.sellItemInput} onSearch={handleSearch} />
-                <DropDown deviceType={"mobile"} onChange={setSortType} page={goToPage} />
-              </div>
+              )}
             </div>
-          )}
-          <MyCardList
-            currentPage={currentPage}
-            page={initialItemPerPage}
-            keyword={keyword}
-            sortType={sortType}
-            setTotalItems={setTotalItems}
-            onSearch={handleSearch}
-          />
+          </div>
         </div>
-        <Pagination
+        <MyCardList
           currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={goToPage}
+          page={initialItemPerPage}
+          keyword={keyword}
+          sortType={sortType}
+          setTotalItems={setTotalItems}
+          onSearch={handleSearch}
         />
-      </main>
-    </>
+      </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={goToPage}
+      />
+    </main>
   );
 }

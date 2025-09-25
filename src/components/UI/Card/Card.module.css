@@ -14,10 +14,6 @@
   }
 }
 
-.link {
-  text-decoration: none;
-}
-
 .favoriteImage {
   background: var(--cool-gray-100);
   width: 282px;

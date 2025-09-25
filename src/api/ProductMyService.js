@@ -34,9 +34,9 @@ export async function createItems(name, description, price, tags) {
   }
 }
 
-export async function getItems() {
+export async function getItems(itemsId) {
   try {
-    const res = await instance.get(`products`);
+    const res = await instance.get(`api/items?${itemsId}`);
     return res.data;
   } catch (err) {
     console.log(err.status);

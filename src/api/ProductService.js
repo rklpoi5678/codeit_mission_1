@@ -35,9 +35,9 @@ export async function createProduct(name, description, price, tags, images) {
   }
 }
 
-export async function getProduct() {
+export async function getProduct(itemId) {
   try {
-    const res = await app.get(`products`);
+    const res = await app.get(`products/${itemId}`);
     return res.data;
   } catch (err) {
     console.log(err.status);

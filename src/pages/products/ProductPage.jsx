@@ -45,37 +45,30 @@ export function ProductPage() {
         </div>
 
         <div className={styles.sellItemContainerPostion}>
-          {!isMobile ? (
-            <div className={styles.sellItemContainer}>
+          <div className={styles.sellItemContainer}>
+            <div className={isMobile ? styles.sellItemTop : ""}>
               <p className={styles.sellItemPara}>판매 중인 상품</p>
               <div className={styles.sellItemFilter}>
                 <Input className={styles.sellItemInput} onSearch={handleSearch} />
-                <Link to="/products/registration" className={styles.sellItemButton} >상품 등록하기</Link>
                 <DropDown onChange={setSortType} page={goToPage} />
+                {!isMobile ? (
+                  <Link to="/products/registration" className={styles.sellItemButton} >상품 등록하기</Link>
+                ) : (
+                  <button className={styles.sellItemButton}>상품 등록하기</button>
+                )}
               </div>
             </div>
-          ) : (
-            <div className={styles.sellItemContainer}>
-              <div className={styles.sellItemTop}>
-                <p className={styles.sellItemPara}>판매 중인 상품</p>
-                <button className={styles.sellItemButton}>상품 등록하기</button>
-              </div>
-              <div className={styles.sellItemFilter}>
-                <Input className={styles.sellItemInput} onSearch={handleSearch} />
-                <DropDown deviceType={"mobile"} onChange={setSortType} page={goToPage} />
-              </div>
-            </div>
-          )}
+          </div>
           <CardList
             currentPage={currentPage}
             page={initialItemPerPage}
             keyword={keyword}
             sortType={sortType}
             setTotalItems={setTotalItems}
-            backKeyword={handleSearch}
+            onSearch={handleSearch}
           />
         </div>
-      </main>
+      </main >
       <div>
         {/** pagination */}
         <Pagination
@@ -84,7 +77,6 @@ export function ProductPage() {
           onPageChange={goToPage}
         />
       </div>
-
     </>
   );
 }

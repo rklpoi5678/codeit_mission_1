@@ -4,7 +4,6 @@ export function CTASection() {
     <section className="panda-section">
       <div className="panda-content">
         <h2 className="panda-text">
-
           믿을 수 있는<br />
           판다마켓 중고 거래
         </h2>

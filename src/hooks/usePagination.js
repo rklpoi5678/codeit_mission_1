@@ -7,7 +7,7 @@ export function usePagination(initialPage = 1, itemsPerPage = 10) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   const goToPage = (pageNumber) => {
-    if (pageNumber < 0) return; //처음 (검증로직)
+    if (pageNumber < 1) return; //처음 (검증로직)
     if (pageNumber > totalPages) return; //끝
     setCurrentPage(pageNumber);
   };

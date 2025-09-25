@@ -4,8 +4,9 @@ import { getProductList } from "@/api/ProductService";
 import { SearchX } from "lucide-react";
 
 import styles from './CardList.module.css';
+import { Link } from "react-router-dom";
 
-export function CardList({ page, currentPage, keyword, sortType, setTotalItems, backKeyword }) {
+export function CardList({ page, currentPage, keyword, sortType, setTotalItems, onSearch }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -30,21 +31,34 @@ export function CardList({ page, currentPage, keyword, sortType, setTotalItems, 
   }, [currentPage, page, keyword, sortType, setTotalItems]);
 
   const handleClick = () => {
-    backKeyword('');
+    onSearch('');
   };
 
-  if (!products.length) return <div className={styles.emptyQuery}><SearchX />검색 결과가 없습니다.<button onClick={handleClick}>검색초기화</button></div>;
+  if (!products.length) {
 
+    return (
+      <>
+        <div className={styles.emptyQuery}>
+          <SearchX />
+          검색 결과가 없습니다.
+          <button onClick={handleClick}>
+            검색초기화
+          </button>
+        </div>
+      </>
+    );
+  }
   return (
     <div className={styles.cardContainer}>
       {products.map((item) => (
+        <Link to={`items/detail/${item.id}`} key={item.id}>
         <Card
-          key={item.id}
           name={item.name}
           price={item.price}
           images={item.images}
           loading={loading}
         />
+        </Link>
       ))}
     </div>
   );

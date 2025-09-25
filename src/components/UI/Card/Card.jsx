@@ -18,16 +18,14 @@ export function Card({ name, price, images, type, loading }) {
       ) : (
 
         <div className={styles.cardContainer}>
-          <Link to="/products/items/detail/1" className={styles.link}>
-            <img className={type === 'favorite' ? styles.favoriteImage : styles.cardImage}
-              src={images?.[0] || "/images/default_items_img.svg"}
-              alt="image" />
-            <div className={styles.cardDescription}>
-              <p className={styles.cardTitle}>{name}</p>
-              <p className={styles.cardPrice}>{price}</p>
-              <div className={styles.cardLikes}><Heart width={16} height={16} /> 240</div>
-            </div>
-          </Link>
+          <img className={type === 'favorite' ? styles.favoriteImage : styles.cardImage}
+            src={images?.[0] || "/images/default_items_img.svg"}
+            alt="image" />
+          <div className={styles.cardDescription}>
+            <p className={styles.cardTitle}>{name}</p>
+            <p className={styles.cardPrice}>{price}</p>
+            <div className={styles.cardLikes}><Heart width={16} height={16} /> 240</div>
+          </div>
         </div>
       )}
     </>

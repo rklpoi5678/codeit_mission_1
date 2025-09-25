@@ -21,13 +21,13 @@ export function Pagination({ currentPage, totalPages, onPageChange }) {
 
   return (
     <div className={styles.pagination}>
-      <div className={styles.arrow} onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
+      <button className={styles.arrow} onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
         <ChevronLeft
           width={16}
           height={16}
           strokeWidth={3}
         />
-      </div>
+      </button>
 
       {pages.map((page) => (
         <button
@@ -39,13 +39,13 @@ export function Pagination({ currentPage, totalPages, onPageChange }) {
         </button>
       ))}
 
-      <div className={styles.arrow} onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+      <button className={styles.arrow} onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
         <ChevronRight
           width={16}
           height={16}
           strokeWidth={3}
         />
-      </div>
+      </button>
     </div>
   );
 }
