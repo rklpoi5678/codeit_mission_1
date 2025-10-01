@@ -10,10 +10,17 @@ export function ItemHeader() {
       <div className={styles.logoBox}>
         <div className={styles.logo}>
           <div>
-            <Link className={styles.logoTitleLink} to="/"><img className={styles.logoImg} src="/images/logo.png" alt="pandamarket" />판다마켓</Link>
+            <Link className={styles.logoTitleLink} to="/">
+              <img className={styles.logoImg} src="/images/logo.png" alt="panda-market" />
+              판다마켓
+            </Link>
           </div>
           <div className={styles.logoParaContainer}>
-            <p className={styles.logoPara}>자유게시판</p>
+            <NavLink to="/articles/"
+              className={styles.logoPara}
+            >
+              자유게시판
+            </NavLink>
             <NavLink to="/products/items"
               className={({ isActive }) => isActive
                 ? `${styles.logoPara} ${styles.active}`

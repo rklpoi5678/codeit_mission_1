@@ -29,7 +29,7 @@ export function FavoriteCardList({ page }) {
   return (
     <div className={styles.favoriteContainer}>
       {products.map((item) => (
-        <Link to={`items/detail/${item.id}`} key={item.id}>
+        <Link className={styles.favoriteLink} to={`items/detail/${item.id}`} key={item.id}>
           <Card
             name={item.name}
             price={item.price}

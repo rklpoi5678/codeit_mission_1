@@ -1,0 +1,76 @@
+/* 게시글 리스트 */
+.articleList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.articleCard {
+  border-bottom: 1px solid #eee;
+  color: var(--color-secondary-900);
+  padding: 10px 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.articleImgTitleBox {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.articleImg {
+  width: 48px;
+  height: 44.571px;
+  flex-shrink: 0;
+  margin: 13.713px 20px 20px 12px;
+}
+
+.title {
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 4px;
+}
+
+.articleInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.articleInfoMeta {
+  display: flex;
+  gap: 8px;
+}
+
+.metaUserAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.meta {
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-secondary-600);
+}
+
+.createdAt {
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-secondary-400);
+}
+
+.view {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-secondary-500);
+  margin-right: 20px;
+}

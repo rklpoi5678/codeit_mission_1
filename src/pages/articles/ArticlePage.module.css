@@ -1,0 +1,76 @@
+/* 전체 레이아웃 */
+.main {
+  max-width: 1920px;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 게시글 영역 */
+.articles {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.articlesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+
+  & p {
+    font-family: var(--font-family-base);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: var(--color-secondary-800);
+  }
+}
+
+.articleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 12px 23px;
+  border-radius: 8px;
+  border: 0px;
+  background-color: var(--color-primary-100);
+  color: var(--cool-gray-100);
+  font-family: var(--font-family-base);
+  font-size: var(--font-lg);
+  font-weight: 600;
+  line-height: 26px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-primary-200);
+  }
+
+  &:active {
+    background-color: var(--color-primary-300);
+  }
+}
+
+.articlesTools {
+  display: flex;
+  max-width: 1920px;
+  margin-bottom: 20px;
+  width: 1200px;
+  margin: 0 auto;
+  white-space: nowrap;
+  gap: 30px;
+}
+
+.searchBox {
+  border-radius: 6px;
+  flex-grow: 1;
+}
+
+.search {
+  border: none;
+  outline: none;
+  font-size: 14px;
+}

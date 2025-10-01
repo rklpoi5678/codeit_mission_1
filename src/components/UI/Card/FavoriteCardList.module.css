@@ -5,3 +5,7 @@
   gap: 24px;
   padding-top: var(--font-lg);
 }
+
+.favoriteLink {
+  text-decoration: none;
+}

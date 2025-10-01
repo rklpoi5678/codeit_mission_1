@@ -1,4 +1,5 @@
-import { app } from "@/constants/api";
+import axios from "axios";
+import { BASE_URL } from "@/constants/api";
 
 /**
  *
@@ -10,8 +11,8 @@ import { app } from "@/constants/api";
  */
 export async function createProduct(name, description, price, tags, images) {
   try {
-    const res = await app.post(
-      `/products`,
+    const res = await axios.post(
+      `${BASE_URL}/products`,
       {
         name,
         description,
@@ -37,7 +38,7 @@ export async function createProduct(name, description, price, tags, images) {
 
 export async function getProduct(itemId) {
   try {
-    const res = await app.get(`products/${itemId}`);
+    const res = await axios.get(`${BASE_URL}products/${itemId}`);
     return res.data;
   } catch (err) {
     console.log(err.status);
@@ -60,8 +61,8 @@ export async function getProductList(
   orderBy = "recent"
 ) {
   try {
-    const res = await app.get(
-      `/products?page=${page}&pageSize=${pageSize}&keyword=${keyword}&orderBy=${orderBy}`
+    const res = await axios.get(
+      `${BASE_URL}products?page=${page}&pageSize=${pageSize}&keyword=${keyword}&orderBy=${orderBy}`
     );
     return res.data;
   } catch (err) {
@@ -76,11 +77,12 @@ export async function getProductList(
 /**
  * @param {Number} productId
  */
-export async function patchProduct(productId) {
+export async function patchProduct(productId, name, description) {
   try {
-    const res = await app.patch(`products/${productId}`, {
-      name: "change",
-      description: "change",
+    const res = await axios.patch(`${BASE_URL}products/${productId}`, {
+      id: productId,
+      name: name,
+      description: description,
     });
     return res.data;
   } catch (err) {
@@ -97,7 +99,7 @@ export async function patchProduct(productId) {
  */
 export async function deleteProduct(productId) {
   try {
-    const res = await app.delete(`products/${productId}`);
+    const res = await axios.delete(`${BASE_URL}products/${productId}`);
     return res.data;
   } catch (err) {
     console.log(err.status);

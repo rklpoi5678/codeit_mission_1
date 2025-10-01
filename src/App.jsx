@@ -7,7 +7,11 @@ import { ProductPage } from "@/pages/products/ProductPage";
 import { ProductLayout } from "@/pages/products/ProductLayout";
 import { ItemsPage } from "@/pages/products/Items/page";
 import { ItemsDetailPage } from "@/pages/products/Items/Items-detail/page";
-import { RegistraionPage } from "@/pages/products/registration/page";
+import { RegistrationPage } from "@/pages/products/registration/page";
+import { ArticleLayout } from "@/pages/articles/ArticleLayout";
+import { ArticlePage } from "@/pages/articles/ArticlePage";
+import { ArticleRegistration } from "@/pages/articles/registration/page";
+import { ArticleDetailPage } from "@/pages/articles/article-detail/page";
 
 export function App() {
   return (
@@ -17,9 +21,14 @@ export function App() {
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/products" element={<ProductLayout />} >
         <Route index element={<ProductPage />} />
-        <Route path="/products/items" element={<ItemsPage />} />
-        <Route path="/products/items/detail/:itemId" element={<ItemsDetailPage />}/>
-        <Route path="/products/registration" element={<RegistraionPage />} />
+        <Route path="items" element={<ItemsPage />} />
+        <Route path="items/detail/:itemId" element={<ItemsDetailPage />} />
+        <Route path="registration" element={<RegistrationPage />} />
+      </Route>
+      <Route path="/articles" element={<ArticleLayout />} >
+        <Route index element={<ArticlePage />} />
+        <Route path="registration" element={<ArticleRegistration />} />
+        <Route path="detail/:articleId" element={<ArticleDetailPage />} />
       </Route>
     </Routes>
   );

@@ -51,7 +51,7 @@ export function CardList({ page, currentPage, keyword, sortType, setTotalItems, 
   return (
     <div className={styles.cardContainer}>
       {products.map((item) => (
-        <Link to={`items/detail/${item.id}`} key={item.id}>
+        <Link className={styles.cardLink} to={`items/detail/${item.id}`} key={item.id}>
         <Card
           name={item.name}
           price={item.price}

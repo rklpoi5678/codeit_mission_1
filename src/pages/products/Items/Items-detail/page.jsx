@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from './ItemsDetailPage.module.css';
 import { getProduct } from "@/api/ProductService";
+import styles from "./ItemsDetailPage.module.css";
 
 export function ItemsDetailPage() {
   const { itemId } = useParams();
@@ -30,7 +30,7 @@ export function ItemsDetailPage() {
 
   return (
     <>
-    {/* flow bite */}
+      {/* flow bite */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.grid}>

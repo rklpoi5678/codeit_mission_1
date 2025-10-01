@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
-import { productDiscribeValidate, productNameValidate, productPriceValidate, productTagValidate } from '@/utils/products/validators';
-import { X } from 'lucide-react';
-import styles from './RegistraionPage.module.css';
 import { useNavigate } from 'react-router-dom';
-import { LoginModal } from '@/components/Modal/LoginModal';
+import { productDescribeValidate, productNameValidate, productPriceValidate, productTagValidate } from '@/utils/products/validators';
 import { instance } from '@/constants/api';
+import { LoginModal } from '@/components/Modal/LoginModal';
+import { X } from 'lucide-react';
+import styles from './RegistrationPage.module.css';
 
-export function RegistraionPage() {
+export function RegistrationPage() {
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState('');
-  const [discribe, setDiscribe] = useState('');
-  const [discribeError, setDiscribeError] = useState('');
+  const [describe, setDescribe] = useState('');
+  const [describeError, setDescribeError] = useState('');
   const [price, setPrice] = useState('');
   const [priceError, setPriceError] = useState('');
   const [tag, setTag] = useState('');
@@ -22,8 +22,8 @@ export function RegistraionPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const isValid = name && discribe && price && tag &&
-      !nameError && !discribeError && !priceError && !tagError;
+    const isValid = name && describe && price && tag &&
+      !nameError && !describeError && !priceError && !tagError;
 
     if (!isValid) {
       setToggleBtn(true);
@@ -31,24 +31,24 @@ export function RegistraionPage() {
       setToggleBtn(false);
     }
     // navigate('/products/items');
-  }, [nameError, discribeError, priceError, tagError, name, discribe, price, tag, navigate]);
+  }, [nameError, describeError, priceError, tagError, name, describe, price, tag, navigate]);
 
-  const handleOnChageName = (e) => {
+  const handleOnChangeName = (e) => {
     setName(e.target.value.trim());
     setNameError(productNameValidate(name));
   };
 
-  const handleOnChageDiscribe = (e) => {
-    setDiscribe(e.target.value.trim());
-    setDiscribeError(productDiscribeValidate(discribe));
+  const handleOnChangeDescribe = (e) => {
+    setDescribe(e.target.value.trim());
+    setDescribeError(productDescribeValidate(describe));
   };
 
-  const handleOnChagePrice = (e) => {
+  const handleOnChangePrice = (e) => {
     setPrice(e.target.value.trim());
     setPriceError(productPriceValidate(price));
   };
 
-  const handleOnChageTag = (e) => {
+  const handleOnChangeTag = (e) => {
     setTag(e.target.value.trim());
     setTagError(productTagValidate(tag));
   };
@@ -64,7 +64,7 @@ export function RegistraionPage() {
     try {
       const newItems = {
         name,
-        description: discribe,
+        description: describe,
         price: Number(price),
         tags: tag,
       };
@@ -108,7 +108,7 @@ export function RegistraionPage() {
             type="text"
             name="product_name"
             id="product_name"
-            onChange={handleOnChageName}
+            onChange={handleOnChangeName}
             placeholder='상품명을 입력해주세요'
             aria-label='상품명을 입력해주세요'
             required
@@ -123,14 +123,14 @@ export function RegistraionPage() {
           <textarea
             name="product_describe"
             id="product_describe"
-            onChange={handleOnChageDiscribe}
+            onChange={handleOnChangeDescribe}
             placeholder='상품 소개를 입력해주세요'
             aria-label='상품 소개를 입력해주세요'
             required
           >
           </textarea>
-          {discribeError &&
-            <span className={styles.error}>{discribeError}</span>
+          {describeError &&
+            <span className={styles.error}>{describeError}</span>
           }
         </div>
 
@@ -140,7 +140,7 @@ export function RegistraionPage() {
             type="text"
             name='product_price'
             id='product_price'
-            onChange={handleOnChagePrice}
+            onChange={handleOnChangePrice}
             placeholder='판매 가격을 입력해주세요'
             aria-label='판매 가격을 입력해주세요'
             required
@@ -156,7 +156,7 @@ export function RegistraionPage() {
             type="text"
             name='product_tag'
             id='product_tag'
-            onChange={handleOnChageTag}
+            onChange={handleOnChangeTag}
             placeholder='태그를 입력해주세요'
             aria-label='태그를 입력해주세요'
             required

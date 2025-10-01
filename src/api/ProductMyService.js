@@ -11,7 +11,7 @@ import { instance } from "@/constants/api";
 export async function createItems(name, description, price, tags) {
   try {
     const res = await instance.post(
-      `api/items`,
+      `api/v1/items`,
       {
         name,
         description,
@@ -36,7 +36,7 @@ export async function createItems(name, description, price, tags) {
 
 export async function getItems(itemsId) {
   try {
-    const res = await instance.get(`api/items?${itemsId}`);
+    const res = await instance.get(`api/v1/items?${itemsId}`);
     return res.data;
   } catch (err) {
     console.log(err.status);
@@ -60,7 +60,7 @@ export async function getItemsList(
 ) {
   try {
     const res = await instance.get(
-      `api/items?page=${page}&limit=${pageSize}&keyword=${keyword}&orderBy=${orderBy}`
+      `api/v1/items?page=${page}&limit=${pageSize}&keyword=${keyword}&orderBy=${orderBy}`
     );
     return res.data;
   } catch (err) {
@@ -77,7 +77,7 @@ export async function getItemsList(
  */
 export async function patchItems(productId) {
   try {
-    const res = await instance.patch(`api/items/${productId}`, {
+    const res = await instance.patch(`api/v1/items/${productId}`, {
       name: "change",
       description: "change",
     });
@@ -96,7 +96,7 @@ export async function patchItems(productId) {
  */
 export async function deleteItems(productId) {
   try {
-    const res = await instance.delete(`api/items/${productId}`);
+    const res = await instance.delete(`api/v1/items/${productId}`);
     return res.data;
   } catch (err) {
     console.log(err.status);
